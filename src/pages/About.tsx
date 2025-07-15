@@ -1,4 +1,4 @@
-import AboutMe from "../assets/image/AboutMe.webp";
+import ProfileMe from "../assets/image/ProfileMe.webp";
 
 export default function About() {
   return (
@@ -10,16 +10,16 @@ export default function About() {
             Get to know me
           </span>
         </div>
-        <h2 className="font-ibm text-heading2 font-semibold">
+        <h2 className="font-ibm font-semibold text-default sm:text-2xl md:text-heading3 lg:text-heading2">
           A Frontend Developer's <span className="text-accent">Journey</span>
         </h2>
       </div>
       {/* imgage + desc */}
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 p-6">
         <img
-          src={AboutMe}
+          src={ProfileMe}
           alt="About Me"
-          className="w-[335px] h-[324px] object-cover rounded-lg mx-auto"
+          className="w-[335px] h-[324px] object-cover rounded-lg mx-auto p-2 hover:rotate-3 transition duration-300 cursor-move"
         />
         <p className="text-body font-regular font-ibm leading-relaxed p-4 rounded-lg">
           Hello! I'm <span className="font-semibold text-accent">Rizwan</span>,

@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section className="lg:mx-[100px] xl:mx-[150px] my-10">
       <div className="flex flex-col items-center space-y-2 ">
-        <h2 className="font-ibm text-heading2 font-semibold text-black leading-[120%]">
+        <h2 className="font-ibm font-semibold text-black leading-[120%] text-default sm:text-2xl md:text-heading3 lg:text-heading2">
           Let's <span className="text-accent">Connect</span>
         </h2>
         <p className="text-body text-center font-regular leading-[120%] font-ibm w-[476px]">

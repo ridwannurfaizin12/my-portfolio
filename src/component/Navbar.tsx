@@ -1,24 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Stacks", path: "/stacks" },
-  { name: "Contact", path: "/contact" },
+  { name: "About", path: "/#about" },
+  { name: "Projects", path: "/#projects" },
+  { name: "Stacks", path: "/#stacks" },
+  { name: "Contact", path: "/#contact" },
 ];
 
 export default function Navbar() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      <div
-        className="max-w-screen-2xl mx-auto 
-  px-4 sm:px-6 lg:px-[100px] xl:px-[150px] 2xl:px-[200px] 
-  py-2 my-4 rounded-xl shadow-mfont-ibm max-md:rounded-none"
-      >
+    <nav className="fixed top-0 left-0 right-0 z-50 ">
+      <div className="max-w-screen-2xl max-sm:px-2 sm:px-6 xl:px-[150px] lg:px-[100px] md:px-8 mt-4 mx-auto rounded-xl shadow-m font-ibm max-md:rounded-none">
         <div className="flex items-center justify-between bg-primary px-4 py-3 rounded-2xl">
           {/* Logo */}
           <Link to="/" className="font-bold text-2xl sm:text-3xl text-accent">
@@ -27,21 +24,23 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4 sm:space-x-6">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-sm sm:text-base font-medium ${
+            {navItems.map((item) => {
+              const isActive = location.pathname + location.hash === item.path;
+
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm sm:text-base font-medium ${
                     isActive
                       ? "text-indigo-600"
                       : "text-gray-600 hover:text-indigo-500"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))}
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Contact Me Button - Desktop */}
@@ -106,26 +105,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={` md:hidden overflow-hidden transition-all duration-300 ease-in-out px-4 sm:px-6 lg:px-8 py-4 space-y-3 bg-primary rounded-b-xl shadow ${
+        className={`sm:mx-6 mt-2 rounded-xl flex flex-col md:hidden overflow-hidden transition-all duration-300 ease-in-out px-4 sm:px-4 lg:px-8 py-4 space-y-3 bg-primary rounded-b-xl shadow ${
           isOpen
             ? "max-h-96 opacity-100 scale-100"
             : "max-h-0 opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `block text-sm sm:text-base font-medium ${
-                isActive ? "text-indigo-600" : "text-gray-700"
-              }`
-            }
-          >
-            {item.name}
-          </NavLink>
-        ))}
+        {navItems.map((item) => {
+          const isActive = location.pathname + location.hash === item.path;
+
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-sm sm:text-base font-medium ${
+                isActive
+                  ? "text-indigo-600"
+                  : "text-gray-600 hover:text-indigo-500"
+              }`}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
 
         {/* <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-amber-300 transition">
           Contact Me

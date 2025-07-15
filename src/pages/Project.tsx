@@ -50,7 +50,7 @@ export default function Projects() {
     <section className="w-full">
       <div className="font-ibm leading-[120%] lg:px-[100px] xl:px-[150px] py-10 mb-6 max-lg:px-6">
         <div className="flex flex-col">
-          <div className="font-heading1 text-heading2">
+          <div className="font-heading1 text-default sm:text-2xl md:text-heading3 lg:text-heading2">
             Featured <span className="text-accent">Works</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">

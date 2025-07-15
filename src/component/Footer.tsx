@@ -7,10 +7,10 @@ export default function Footer() {
     <footer className="bg-secondary lg:px-[100px] xl:px-[150px] py-10 px-8">
       <div className="flex flex-col items-center border-2 border-white border-dashed rounded-xl py-8 font-ibm ">
         <h1 className="font-semibold text-2xl text-accent">RNF</h1>
-        <h3 className="text-heading3 text-white font-semibold text-center leading-[120%]">
+        <h3 className="text-white font-semibold text-center leading-[120%] text-default sm:text-2xl md:text-heading3 lg:text-heading2">
           Crafting interface, <br /> user-friendly web experiences.
         </h3>
-        <p className="text-body font-regular leading-[120%] text-primary">
+        <p className="text-body font-regular leading-[120%] text-text3">
           Building seamless, responsive, and visually stunning websites.
         </p>
         {/* Icon Sosmed  */}

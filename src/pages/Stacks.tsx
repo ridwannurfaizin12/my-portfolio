@@ -9,9 +9,9 @@ import IconTailwind from "../assets/Icon/TailwindStacks .svg";
 export default function Stacks() {
   return (
     <div className="lg:px-[100px] xl:px-[150px] py-10 px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center max-sm:text-center gap-8">
         {/* Kolom 1 - Judul */}
-        <h2 className="font-ibm text-heading3 text-black leading-[120%]">
+        <h2 className="font-ibm text-black leading-[120%] text-default sm:text-default md:text-heading3 lg:text-heading2 font-semibold">
           Tech{" "}
           <span className="text-accent">
             Stack <br />
